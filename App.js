@@ -73,7 +73,7 @@ const App = () => {
         name="Historicos"
         component={Historicos}
         options={{
-          title: 'Precio Historicos',
+          title: 'Precios Historicos',
           headerStyle: {
             backgroundColor: 'blue',
           },

@@ -42,7 +42,7 @@ export const FormularioHisto = ({moneda,setMoneda,criptomoneda,setCriptoMoneda,g
         
     }
 
-
+  
     const cotizarPrecio = () => {
         
 
@@ -91,7 +91,7 @@ export const FormularioHisto = ({moneda,setMoneda,criptomoneda,setCriptoMoneda,g
                 <Picker.Item label="Dolar" value="USD" />
                 <Picker.Item label="Peso Chileno" value="CLP" />
                 <Picker.Item label="Peso Mexicano" value="MXN" />
-                <Picker.Item label="Peso Colombiano" value="COL" />
+                {/* <Picker.Item label="Peso Colombiano" value="COL" /> */}
                 <Picker.Item label="Peso Argentino" value="ARS" />
                 <Picker.Item label="Euro" value="EUR" />
                 <Picker.Item label="Libra" value="GBP" />

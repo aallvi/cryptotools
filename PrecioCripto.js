@@ -73,7 +73,7 @@ export const PrecioCripto = () => {
     {/* <Header/> */}
 
 
-    <Image style={styles.imagen} source={ require('./assets/img/cryptomonedas.png') } />
+    {/* <Image style={styles.imagen} source={ require('./assets/img/cryptomonedas.png') } /> */}
 
     <View style={styles.contenido}>
     <Formulario moneda={moneda} setMoneda={setMoneda} criptomoneda={criptomoneda} setCriptoMoneda={setCriptoMoneda} guardarConsultarAPI={guardarConsultarAPI} setInfo={setInfo} />

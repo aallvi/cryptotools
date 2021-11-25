@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {StyleSheet, Text,View,TextInput,TouchableHighlight,Alert } from 'react-native';
+import {StyleSheet, Text,View,TextInput,TouchableHighlight,Alert,ScrollView } from 'react-native';
 
 export const Calculadora = () => {
 
@@ -44,7 +44,7 @@ export const Calculadora = () => {
         
     
     return (
-        <>
+        <ScrollView>
 
             <Text style={styles.label} > ¿Ganamos o Perdimos? </Text>
             <Text style={styles.uso} > Herramienta para proyectar compras, calcular ganancias,perdidas, etc </Text>
@@ -83,23 +83,23 @@ export const Calculadora = () => {
                 >Calcular</Text>
             </TouchableHighlight>
 
-            {cotizar && 
+            {cotizar && <>
+                <Text style={[styles.titulo, {marginTop:15}]}> Resultado Operacion </Text>
 
-                <View style={styles.resultado}>
-                <Text style={styles.titulo}> Resultado Operacion </Text>
+                <View style={styles.contenedorResultados}>
                     
                     <Text style={styles.texto}> Monto Final = <Text style={styles.span}>{final}$</Text>  </Text>
-                    <Text style={styles.texto}> Variacion en $ = <Text style={styles.span}>{ganancia}$ </Text>  </Text>
+                    <Text style={styles.texto}> Ganancias en $ = <Text style={styles.span}>{ganancia}$ </Text>  </Text>
                     <Text style={styles.texto}> Variacion en % = <Text style={styles.span}> {porcentaje}% </Text></Text>
                     
                 </View>
-            
+            </>
             }
 
             
 
             
-        </>
+        </ScrollView>
     )
 }
 
@@ -160,24 +160,29 @@ const styles = StyleSheet.create({
     
    
       },
+      contenedorResultados:{
+    
+        padding:5,
+        margin:'2.5%'
+    
+      },
    
       texto:{
-       color:'white',
-       textAlign:'center',
-       fontSize:17,
-       marginVertical: 8
-   
-   
+        color:'black',
+            marginTop:8,
+            fontSize:18,
+            marginLeft:60,
+            marginBottom:10
       },
       titulo:{
-       color:'white',
-       fontFamily:'Lato-Black',
-       fontSize:20,
-       textAlign:'center',
-       marginBottom: 10
-   
-   
-      },
+        color:'black',
+        fontFamily:'Lato-Black',
+        fontSize:20,
+        textAlign:'center',
+        marginBottom: 10
+     
+     
+       },
    
       textoless: {
        color:'white',

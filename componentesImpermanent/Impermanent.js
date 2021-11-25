@@ -66,26 +66,6 @@ export const Impermanent = () => {
      const impermanent = (((valorHold -finalValueLiq)/valorHold)*100).toFixed(2)
 
 
-    
-
-     console.log('inversion',inversion)
-     console.log('precioActivoA',precioActivoA)
-     console.log('precioActivoB',precioActivoB)
-     console.log('precioActivoBFuturo',precioActivoBFuturo)
-     console.log('precioActivoAFuturo',precioActivoAFuturo)
-
-     console.log('cuantotengoA',cuantotengoA)
-     console.log('cuantotengoB',cuantotengoB)
-
-     console.log('liqA',liqA)
-     console.log('liqB',liqB)
-     console.log('liqTotal',liqTotal)
-
-     console.log(liqBFuturo)
-
-
-
-
 
 
     return (
