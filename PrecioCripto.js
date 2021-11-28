@@ -32,7 +32,7 @@ export const PrecioCripto = () => {
     const cotizarCripto = async () => {
 
       if(consultarAPI){
-        console.log('listo para cotizar')
+        // console.log('listo para cotizar')
   
         const response = await fetch(
           `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`
@@ -59,7 +59,7 @@ export const PrecioCripto = () => {
    
   }, [consultarAPI])
 
-  const componente = cargando ? <ActivityIndicator size="large" color="blueviolet" /> : <Cotizacion resultado={resultado} criptomoneda={criptomoneda} info={info} guardarConsultarAPI={guardarConsultarAPI} consultarAPI={consultarAPI} />
+  const componente = cargando ? <ActivityIndicator size="large" color="blue" /> : <Cotizacion resultado={resultado} criptomoneda={criptomoneda} info={info} guardarConsultarAPI={guardarConsultarAPI} consultarAPI={consultarAPI} />
   
  const cerrar= () => {
   Keyboard.dismiss

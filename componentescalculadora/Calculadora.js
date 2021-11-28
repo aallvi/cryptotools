@@ -47,7 +47,7 @@ export const Calculadora = () => {
         <ScrollView>
 
             <Text style={styles.label} > ¿Ganamos o Perdimos? </Text>
-            <Text style={styles.uso} > Herramienta para proyectar compras, calcular ganancias,perdidas, etc </Text>
+            <Text style={styles.uso} > Proyecta compras, calcula ganancias y perdidas </Text>
             <Text style={{textAlign:'center', marginBottom:20, fontSize:15}} > Puedes ingresar los valores en Moneda Fiat preferida </Text>
 
         <Text style={styles.TextInput}>Precio Compra Cripto</Text>
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     },
 
     uso:{
-        marginLeft: 27,
+        marginHorizontal: 27,
          marginBottom:20, 
          fontSize:15,
           color:'black'

@@ -166,10 +166,10 @@ export const Impermanent = () => {
         <Text style={{color:'black', textAlign:'center',marginTop:8,fontSize:15}} > Inversion Token A: {inversion/2}$ - Inversion Token B: {inversion/2}$  </Text>
         
         <View style={styles.resultado}>
-        <Text style={styles.textoresult} > Valor si haces Hold {valorHold.toFixed(0)}$ </Text>
-        <Text style={styles.textoresult}  > Valor si provees liquidez {finalValueLiq.toFixed(0)}$ </Text>
+        <Text style={styles.textoresult} > Valor si haces Hold <Text style={styles.span} >${valorHold.toFixed(0)}   </Text>  </Text>
+        <Text style={styles.textoresult}  > Valor si provees liquidez <Text style={styles.span}> ${finalValueLiq.toFixed(0)} </Text>  </Text>
         
-        <Text style={styles.textoresult}  > Impermanent Loss {impermanent}% </Text>
+        <Text style={styles.textoresult}  > Impermanent Loss <Text style={styles.span}> {impermanent}% </Text>  </Text>
         </View>
         </View>
 
@@ -192,6 +192,13 @@ export const Impermanent = () => {
 
 
 const styles = StyleSheet.create({
+
+    span :{
+
+        fontFamily:'Lato-Black',
+     
+     
+       },
 
     textoresult: {
 

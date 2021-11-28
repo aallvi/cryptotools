@@ -12,6 +12,7 @@ import { Menu } from './Menu';
 import { Historicos } from './Historicos';
 import { Calculadora } from './componentescalculadora/Calculadora';
 import { Impermanent } from './componentesImpermanent/Impermanent';
+import { About } from './About';
 
 
 const App = () => {
@@ -106,6 +107,22 @@ const App = () => {
         component={Impermanent}
         options={{
           title: 'Impermanent Loss',
+          headerStyle: {
+            backgroundColor: 'blue',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize:20
+          },
+        }}
+        
+        />
+        <Stack.Screen
+        name="About"
+        component={About}
+        options={{
+          title: 'About',
           headerStyle: {
             backgroundColor: 'blue',
           },

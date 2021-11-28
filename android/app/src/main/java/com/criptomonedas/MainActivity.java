@@ -1,4 +1,4 @@
-package com.criptomonedas;
+package com.criptotoolsalvi;
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
 

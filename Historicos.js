@@ -66,7 +66,7 @@ export const Historicos = () => {
    
   }, [consultarAPI])
 
-  const componente = cargando ? <ActivityIndicator size="large" color="blueviolet" /> : <CotizacionHisto resultado={resultado} criptomoneda={criptomoneda} info={info} guardarConsultarAPI={guardarConsultarAPI} consultarAPI={consultarAPI} moneda={moneda} />
+  const componente = cargando ? <ActivityIndicator size="large" color="blue" /> : <CotizacionHisto resultado={resultado} criptomoneda={criptomoneda} info={info} guardarConsultarAPI={guardarConsultarAPI} consultarAPI={consultarAPI} moneda={moneda} />
   
  const cerrar= () => {
   Keyboard.dismiss

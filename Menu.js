@@ -3,7 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableHighlight,Image
+  TouchableHighlight,Image, TouchableWithoutFeedback, TouchableWithoutFeedbackComponent
 } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -45,7 +45,10 @@ export const Menu = () => {
 
 
         <Image style={styles.imagen} source={ require('./assets/img/criptomundo.png') } />
-
+        
+        <TouchableWithoutFeedback onPress={() => navigation.navigate('About') } >
+          <Text style={{color:'blue', fontSize:18,marginTop:10, fontWeight:'bold'}} >About</Text>
+        </TouchableWithoutFeedback>
 
         </View>
     </>
