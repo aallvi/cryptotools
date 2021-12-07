@@ -48,30 +48,36 @@ export const Calculadora = () => {
 
             <Text style={styles.label} > ¿Ganamos o Perdimos? </Text>
             <Text style={styles.uso} > Proyecta compras, calcula ganancias y perdidas </Text>
-            <Text style={{textAlign:'center', marginBottom:20, fontSize:15}} > Puedes ingresar los valores en Moneda Fiat preferida </Text>
+            <Text style={{textAlign:'center', marginBottom:20, fontSize:15,color:'black'}} > Puedes ingresar los valores en Moneda Fiat preferida </Text>
 
         <Text style={styles.TextInput}>Precio Compra Cripto</Text>
         <TextInput
-        style={styles.input}
+         style={{...styles.input, color:'black'}}
         onChangeText={ (text) => setPrecioCompra(text) }
         value={precioCompra}
         placeholder='Precio Criptomoneda al momento de compra'
+        placeholderTextColor='grey'
+        keyboardType='number-pad'
         />
 
         <Text style={styles.TextInput}>Cantidad Invertida</Text>
         <TextInput
-        style={styles.input}
+        style={{...styles.input, color:'black'}}
         onChangeText={ (text) => setcantidadInvertida(text) }
         value={cantidadInvertida}
         placeholder='Cantidad invertida'
+        placeholderTextColor='grey'
+        keyboardType='number-pad'
         />
 
         <Text style={styles.TextInput}>Precio Venta Cripto</Text>
         <TextInput
-        style={styles.input}
+         style={{...styles.input, color:'black'}}
         onChangeText={ (text) => setPrecioVenta(text) }
         value={precioVenta}
         placeholder='Precio Criptomoneda al momendo de venta'
+        placeholderTextColor='grey'
+        keyboardType='number-pad'
         />
 
        <TouchableHighlight

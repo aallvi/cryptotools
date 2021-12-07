@@ -70,7 +70,7 @@ export const CotizacionHisto = ({resultado,criptomoneda,info,moneda}) => {
       
        <View style={styles.contenedorResultados}>
             <Text style={styles.texto}> Precio Apertura hoy = <Text style={styles.span}>${resultado[0][730].open}</Text>  </Text>
-            <Text style={styles.texto}> Precio hace 6 Meses = <Text style={styles.span}>${resultado[0][547].open === 0 ? 'No info' :` $${resultado[0][547].open}` } </Text></Text>
+            <Text style={styles.texto}> Precio hace 6 Meses = <Text style={styles.span}>{resultado[0][547].open === 0 ? 'No info' :` $${resultado[0][547].open}` } </Text></Text>
             <Text style={styles.texto}> Precio hace 1 Año = <Text style={styles.span}>{resultado[0][365].open === 0 ? 'No info' :  ` $${resultado[0][365].open}`  }</Text> </Text>
             <Text style={styles.texto}> Precio hace 2 Años = <Text style={styles.span}>{resultado[0][0].open === 0? 'No info' :  ` $${resultado[0][0].open}`  }</Text> </Text>
             

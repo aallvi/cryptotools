@@ -23,7 +23,7 @@ export const About = () => {
             
             
 
-            <Text style={{marginTop:50}} >Icono diseñado por <Text style={{color: 'blue'}}
+            <Text style={{marginTop:50,color:'black'}} >Icono diseñado por <Text style={{color: 'blue'}}
             onPress={() => Linking.openURL('https://www.flaticon.es/autores/payungkead')}>
             Payungkead
             </Text> </Text>

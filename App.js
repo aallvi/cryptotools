@@ -3,7 +3,7 @@ import React from 'react';
 import {
   StyleSheet,
   Text,
-  View,
+  View,ScrollView
 } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -13,6 +13,7 @@ import { Historicos } from './Historicos';
 import { Calculadora } from './componentescalculadora/Calculadora';
 import { Impermanent } from './componentesImpermanent/Impermanent';
 import { About } from './About';
+
 
 
 const App = () => {
@@ -146,7 +147,7 @@ const App = () => {
      
 
       </Stack.Navigator>
-
+     
     </NavigationContainer>
    
     </>
@@ -154,9 +155,7 @@ const App = () => {
   );
 };
 
-const styles = StyleSheet.create({
- 
-});
+
 
 export default App;
 

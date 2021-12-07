@@ -3,7 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableHighlight,Image, TouchableWithoutFeedback, TouchableWithoutFeedbackComponent
+  TouchableHighlight,Image,ScrollView, TouchableOpacity,TouchableWithoutFeedback
 } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -14,10 +14,10 @@ export const Menu = () => {
 
   const navigation = useNavigation()
     
-
+  
 
     return (
-        <>
+        <ScrollView>
         <View style={{alignItems:'center'}}>
             <Text style={styles.label}> Cripto Tools</Text>
 
@@ -27,21 +27,21 @@ export const Menu = () => {
         <View style={{alignItems:'center'}}>
 
         
-        <TouchableHighlight onPress={() => navigation.navigate('PrecioCripto') } style={styles.btnCotizar}>
+        <TouchableOpacity onPress={() => navigation.navigate('PrecioCripto') } style={styles.btnCotizar}>
         <Text style={styles.textoCotizar}> Precios Criptomonedas</Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
 
-        <TouchableHighlight onPress={() => navigation.navigate('Historicos') } style={styles.btnCotizar}>
+        <TouchableOpacity onPress={() => navigation.navigate('Historicos') } style={styles.btnCotizar}>
         <Text style={styles.textoCotizar}> Precios Historicos</Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
 
-        <TouchableHighlight onPress={() => navigation.navigate('Calculadora') } style={styles.btnCotizar}>
+        <TouchableOpacity onPress={() => navigation.navigate('Calculadora') } style={styles.btnCotizar}>
         <Text style={styles.textoCotizar}> Calculadora de Ganancias </Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
 
-        <TouchableHighlight onPress={() => navigation.navigate('Impermanent') } style={styles.btnCotizar}>
+        <TouchableOpacity onPress={() => navigation.navigate('Impermanent') } style={styles.btnCotizar}>
         <Text style={styles.textoCotizar}> Impermanent Loss </Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
 
 
         <Image style={styles.imagen} source={ require('./assets/img/criptomundo.png') } />
@@ -51,7 +51,7 @@ export const Menu = () => {
         </TouchableWithoutFeedback>
 
         </View>
-    </>
+    </ScrollView>
     )
 }
 

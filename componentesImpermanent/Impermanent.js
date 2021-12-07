@@ -79,11 +79,12 @@ export const Impermanent = () => {
         <Text style={{color:'black'}}> Inversion Total </Text>
         </View>
         <TextInput
-        style={styles.input}
+        style={{...styles.input, color:'black'}}
         onChangeText={(text) => setInversion(parseInt(text)) }
         value={inversion}
         placeholder='USD'
         keyboardType='number-pad'
+        placeholderTextColor='grey'
         />
 
        </View>
@@ -93,11 +94,12 @@ export const Impermanent = () => {
         <Text style={{color:'black'}}> Precio Token A </Text>
         </View>
         <TextInput
-        style={styles.input}
+        style={{...styles.input, color:'black'}}
         onChangeText={(text) => setPrecioActivoA(parseFloat(text)) }
         value={precioActivoA}
         placeholder='Precio Inicial'
         keyboardType='number-pad'
+        placeholderTextColor='grey'
         />
 
        </View>
@@ -107,11 +109,12 @@ export const Impermanent = () => {
         <Text style={{color:'black'}}> Precio Token B </Text>
         </View>
         <TextInput
-        style={styles.input}
+        style={{...styles.input, color:'black'}}
         onChangeText={(text) => setPrecioActivoB(parseFloat(text)) }
         value={precioActivoB}
         placeholder='Precio Inicial'
         keyboardType='number-pad'
+        placeholderTextColor='grey'
         />
 
        </View>
@@ -130,11 +133,12 @@ export const Impermanent = () => {
         <Text style={{color:'black'}}> Precio Token a </Text>
         </View>
         <TextInput
-        style={styles.input}
+        style={{...styles.input, color:'black'}}
         onChangeText={(text) => setPrecioActivoAFuturo(parseFloat(text)) }
         value={precioActivoAFuturo}
         placeholder='Precio Futuro'
         keyboardType='number-pad'
+        placeholderTextColor='grey'
         />
 
        </View>
@@ -143,11 +147,12 @@ export const Impermanent = () => {
         <Text style={{color:'black'}}> Precio Token B </Text>
         </View>
         <TextInput
-        style={styles.input}
+        style={{...styles.input, color:'black'}}
         onChangeText={(text) => setPrecioActivoBFuturo(parseFloat(text)) }
         value={precioActivoBFuturo}
         placeholder='Precio Futuro'
         keyboardType='number-pad'
+        placeholderTextColor='grey'
         />
 
        </View>
