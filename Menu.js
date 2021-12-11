@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
 
     label: {
         fontFamily: 'Lato-Black',
-        fontSize: 22,
+        fontSize: 28,
         marginVertical: 20,
         color:'black',
         alignItems:'center',

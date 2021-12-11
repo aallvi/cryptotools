@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {StyleSheet, Text,View, 
   } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
   
 
 
@@ -79,16 +80,22 @@ export const CotizacionHisto = ({resultado,criptomoneda,info,moneda}) => {
 
     console.log(Math.max(...preciostodos))
 
+   let ATH = Math.max(...preciostodos)
+   console.log(ATH)
+
+   const distanciaATH = ((resultado[0][730].open / ATH )*100).toFixed(0)
+
     return (
-      <>
+      <ScrollView>
         <View style={styles.resultado}>
         <Text style={styles.titulo}> Precios en el tiempo de {resultado[1]} </Text>
 
       
        <View style={styles.contenedorResultados}>
 
-            <Text style={{...styles.texto, color:'green', fontWeight:'bold'}}> Maximo Historico (ATH) = { Math.max(...preciostodos) === -Infinity ? <Text style={styles.click}>Ver</Text> : <Text style={styles.span}>${Math.max(...preciostodos)}</Text> }    </Text>
-            <Text style={styles.texto}> Precio Apertura Hoy = <Text style={styles.span}>${resultado[0][730].open}</Text>  </Text>
+            <Text style={{...styles.texto, color:'green', fontWeight:'bold'}}> Maximo Historico (ATH) = { ATH === -Infinity ? <Text style={styles.click}>Ver</Text> : <Text style={styles.span}>${Math.max(...preciostodos)}</Text> }</Text>
+            {/* <Text style={styles.texto}> Porcentaje de Caida desde ATH = <Text style={styles.span}>{100-distanciaATH}%</Text></Text> */}
+            <Text style={styles.texto}> Precio Apertura Hoy = <Text style={styles.span}>${resultado[0][730].open}</Text></Text>
             <Text style={styles.texto}> Precio hace 6 Meses = <Text style={styles.span}>{resultado[0][547].open === 0 ? 'No info' :` $${resultado[0][547].open}` } </Text></Text>
             <Text style={styles.texto}> Precio hace 1 Año = <Text style={styles.span}>{resultado[0][365].open === 0 ? 'No info' :  ` $${resultado[0][365].open}`  }</Text> </Text>
             <Text style={styles.texto}> Precio hace 2 Años = <Text style={styles.span}>{resultado[0][0].open === 0? 'No info' :  ` $${resultado[0][0].open}`  }</Text> </Text>
@@ -122,7 +129,7 @@ export const CotizacionHisto = ({resultado,criptomoneda,info,moneda}) => {
 
         </View>
 
-      </>
+      </ScrollView>
     )
 }
 
@@ -164,6 +171,13 @@ const styles = StyleSheet.create({
         marginTop:8,
         fontSize:18,
         marginLeft:35,
+        marginBottom:10
+  },
+  texto1:{
+    color:'black',
+        marginTop:8,
+        fontSize:18,
+        // marginLeft:35,
         marginBottom:10
   },
 
