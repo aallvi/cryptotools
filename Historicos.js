@@ -33,7 +33,7 @@ export const Historicos = () => {
     const cotizarCripto = async () => {
 
       if(consultarAPI){
-        console.log('listo para cotizar')
+        // console.log('listo para cotizar')
 
        
         const response = await fetch(
@@ -72,10 +72,10 @@ export const Historicos = () => {
   Keyboard.dismiss
 
  }
- console.log('moneda',moneda)
- console.log('criptomoneda',criptomoneda)
+//  console.log('moneda',moneda)
+//  console.log('criptomoneda',criptomoneda)
 
-console.log('info',info)
+// console.log('info',info)
 
   return (
     <>
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     },
     componente:{
 
-      marginTop: 40,
+      marginTop: 25,
      
       
     }

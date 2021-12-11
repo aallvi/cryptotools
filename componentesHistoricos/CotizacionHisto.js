@@ -60,8 +60,25 @@ export const CotizacionHisto = ({resultado,criptomoneda,info,moneda}) => {
       
     }, [calculo])
    
-    // console.log(resultado[0][730])
- 
+    
+
+    const [preciostodos, setpreciostodos] = useState([])
+
+
+
+    useEffect(() => {
+    let arry = [];
+    for (let i = 0; i < 731; i++) {
+       arry[i] = resultado[0][i].high;
+    }
+
+    setpreciostodos(arry)
+              
+    }, [])
+    
+
+    console.log(Math.max(...preciostodos))
+
     return (
       <>
         <View style={styles.resultado}>
@@ -69,11 +86,12 @@ export const CotizacionHisto = ({resultado,criptomoneda,info,moneda}) => {
 
       
        <View style={styles.contenedorResultados}>
-            <Text style={styles.texto}> Precio Apertura hoy = <Text style={styles.span}>${resultado[0][730].open}</Text>  </Text>
+
+            <Text style={{...styles.texto, color:'green', fontWeight:'bold'}}> Maximo Historico (ATH) = { Math.max(...preciostodos) === -Infinity ? <Text style={styles.click}>Ver</Text> : <Text style={styles.span}>${Math.max(...preciostodos)}</Text> }    </Text>
+            <Text style={styles.texto}> Precio Apertura Hoy = <Text style={styles.span}>${resultado[0][730].open}</Text>  </Text>
             <Text style={styles.texto}> Precio hace 6 Meses = <Text style={styles.span}>{resultado[0][547].open === 0 ? 'No info' :` $${resultado[0][547].open}` } </Text></Text>
             <Text style={styles.texto}> Precio hace 1 Año = <Text style={styles.span}>{resultado[0][365].open === 0 ? 'No info' :  ` $${resultado[0][365].open}`  }</Text> </Text>
             <Text style={styles.texto}> Precio hace 2 Años = <Text style={styles.span}>{resultado[0][0].open === 0? 'No info' :  ` $${resultado[0][0].open}`  }</Text> </Text>
-            
             
     
         </View>
@@ -97,6 +115,8 @@ export const CotizacionHisto = ({resultado,criptomoneda,info,moneda}) => {
       
          }
 
+         
+
         
 
 
@@ -110,7 +130,7 @@ const styles = StyleSheet.create({
   resultado: {
 
     
-    paddingTop:10,
+    // paddingTop:5,
     
   },
 

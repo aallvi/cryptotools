@@ -17,6 +17,10 @@ import { About } from './About';
 
 
 const App = () => {
+
+
+
+  
   
  
  const Stack = createNativeStackNavigator()

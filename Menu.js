@@ -39,9 +39,9 @@ export const Menu = () => {
         <Text style={styles.textoCotizar}> Calculadora de Ganancias </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate('Impermanent') } style={styles.btnCotizar}>
+        <TouchableHighlight onPress={() => navigation.navigate('Impermanent') } style={styles.btnCotizar}>
         <Text style={styles.textoCotizar}> Impermanent Loss </Text>
-        </TouchableOpacity>
+        </TouchableHighlight>
 
 
         <Image style={styles.imagen} source={ require('./assets/img/criptomundo.png') } />
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center',
         marginBottom:30,
-        marginTop:70
+        marginTop:50
     },
 
     btnCotizar :{

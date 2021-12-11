@@ -94,8 +94,8 @@ export const Calculadora = () => {
 
                 <View style={styles.contenedorResultados}>
                     
-                    <Text style={styles.texto}> Monto Final = <Text style={styles.span}>{final}$</Text>  </Text>
-                    <Text style={styles.texto}> Ganancias en $ = <Text style={styles.span}>{ganancia}$ </Text>  </Text>
+                    <Text style={styles.texto}> Monto Final = <Text style={styles.span}>${final}</Text>  </Text>
+                    <Text style={styles.texto}> Ganancias en $ = <Text style={styles.span}>${ganancia} </Text>  </Text>
                     <Text style={styles.texto}> Variacion en % = <Text style={styles.span}> {porcentaje}% </Text></Text>
                     
                 </View>
