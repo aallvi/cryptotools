@@ -37,7 +37,7 @@ export const Historicos = () => {
 
        
         const response = await fetch(
-          `https://min-api.cryptocompare.com/data/v2/histoday?fsym=${criptomoneda}&tsym=${moneda}&limit=730`
+          `https://min-api.cryptocompare.com/data/v2/histoday?fsym=${criptomoneda}&tsym=${moneda}&limit=730&api_key=36681360f91a1caec50e5b51b172b77f3ff58a5b8dcf33660c59ec9ba00bd952`
         );
         const json = await response.json();
          
@@ -75,7 +75,7 @@ export const Historicos = () => {
 //  console.log('moneda',moneda)
 //  console.log('criptomoneda',criptomoneda)
 
-// console.log('info',info)
+console.log('resupuesta',resultado)
 
   return (
     <>
@@ -91,7 +91,10 @@ export const Historicos = () => {
     
     </View>
     <View style={styles.componente} >
-    {componente}
+      
+      { resultado[0] === undefined ? <Text style={styles.error} > Error: Prueba con otra Moneda Nacional </Text> : componente }
+      
+    
     </View>
   
     
@@ -107,17 +110,24 @@ const styles = StyleSheet.create({
     imagen : {
       width:'100%',
       height: 150,
-
     },
 
     contenido: {
       marginHorizontal:'2.5%'
     },
     componente:{
-
       marginTop: 25,
-     
       
+    },
+
+    error : {
+
+
+      textAlign:'center',
+       fontSize:19,
+        color:'black',
+        marginTop:100
+
     }
 
 });

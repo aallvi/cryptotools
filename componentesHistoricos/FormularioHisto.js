@@ -73,7 +73,7 @@ export const FormularioHisto = ({moneda,setMoneda,criptomoneda,setCriptoMoneda,g
         //   console.log('cotizando')
     }
 
-
+      
 
 
   

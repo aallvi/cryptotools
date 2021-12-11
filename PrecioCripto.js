@@ -35,7 +35,7 @@ export const PrecioCripto = () => {
         // console.log('listo para cotizar')
   
         const response = await fetch(
-          `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`
+          `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}&api_key=36681360f91a1caec50e5b51b172b77f3ff58a5b8dcf33660c59ec9ba00bd952`
         );
         const json = await response.json();
 

@@ -9,30 +9,17 @@ export const CotizacionHisto = ({resultado,criptomoneda,info,moneda}) => {
    
  
    if(Object.keys(resultado).length ===0) return null
-
-  //  console.log(resultado)
   
 
    const [calculo, setcalculo] = useState(0)
-    
-    
-    
-    
-    const [miles, setmiles] = useState(0)
+  
+  const [miles, setmiles] = useState(0)
 
-
-    
-    // console.log('calculo',calculo)
-
-    // console.log(miles)
-    
    const [coin, setcoin] = useState(moneda)
 
-      // const cero = () => {
-      //   if 
-      // }
-
     useEffect(() => {
+
+      
 
       const calcular = () => {
       
@@ -49,12 +36,12 @@ export const CotizacionHisto = ({resultado,criptomoneda,info,moneda}) => {
           return
         }else setcalculo(parseFloat(meses6))
   
-  
       }
       calcular()
       // setchange(!change)
       setcoin(moneda)
     }, [resultado[0][730]])
+
 
     useEffect(() => {
       setmiles(parseFloat(((resultado[0][730].open/calculo)*1000).toFixed(1)))
@@ -78,12 +65,22 @@ export const CotizacionHisto = ({resultado,criptomoneda,info,moneda}) => {
     }, [])
     
 
-    console.log(Math.max(...preciostodos))
+    
 
-   let ATH = Math.max(...preciostodos)
-   console.log(ATH)
+    let ATH = Math.max(...preciostodos)
+    
 
-   const distanciaATH = ((resultado[0][730].open / ATH )*100).toFixed(0)
+    const ATHFORMAT = new Intl.NumberFormat('de-DE').format(ATH)
+
+ 
+
+    // PRECIOS MOSTRAR 
+    const preciohoy = new Intl.NumberFormat('de-DE').format(resultado[0][730].open)
+    const precio6meses = new Intl.NumberFormat('de-DE').format(resultado[0][547].open)
+    const precio1ano = new Intl.NumberFormat('de-DE').format(resultado[0][365].open)
+    const precio2ano = new Intl.NumberFormat('de-DE').format(resultado[0][0].open)
+
+    
 
     return (
       <ScrollView>
@@ -93,12 +90,12 @@ export const CotizacionHisto = ({resultado,criptomoneda,info,moneda}) => {
       
        <View style={styles.contenedorResultados}>
 
-            <Text style={{...styles.texto, color:'green', fontWeight:'bold'}}> Maximo Historico (ATH) = { ATH === -Infinity ? <Text style={styles.click}>Ver</Text> : <Text style={styles.span}>${Math.max(...preciostodos)}</Text> }</Text>
+            <Text style={{...styles.texto, color:'green', fontWeight:'bold'}}> Maximo Historico = { ATHFORMAT === -Infinity ? <Text style={styles.click}>Ver</Text> : <Text style={styles.span}>${ATHFORMAT}</Text> }</Text>
             {/* <Text style={styles.texto}> Porcentaje de Caida desde ATH = <Text style={styles.span}>{100-distanciaATH}%</Text></Text> */}
-            <Text style={styles.texto}> Precio Apertura Hoy = <Text style={styles.span}>${resultado[0][730].open}</Text></Text>
-            <Text style={styles.texto}> Precio hace 6 Meses = <Text style={styles.span}>{resultado[0][547].open === 0 ? 'No info' :` $${resultado[0][547].open}` } </Text></Text>
-            <Text style={styles.texto}> Precio hace 1 Año = <Text style={styles.span}>{resultado[0][365].open === 0 ? 'No info' :  ` $${resultado[0][365].open}`  }</Text> </Text>
-            <Text style={styles.texto}> Precio hace 2 Años = <Text style={styles.span}>{resultado[0][0].open === 0? 'No info' :  ` $${resultado[0][0].open}`  }</Text> </Text>
+            <Text style={styles.texto}> Precio Apertura Hoy = <Text style={styles.span}>${preciohoy}</Text></Text>
+            <Text style={styles.texto}> Precio hace 6 Meses = <Text style={styles.span}>{precio6meses== 0 ? 'No info' :` $${precio6meses}` } </Text></Text>
+            <Text style={styles.texto}> Precio hace 1 Año = <Text style={styles.span}>{precio1ano == 0 ? 'No info' :  ` $${precio1ano}`  }</Text> </Text>
+            <Text style={styles.texto}> Precio hace 2 Años = <Text style={styles.span}>{precio2ano == 0? 'No info' :  ` $${precio2ano}`  }</Text> </Text>
             
     
         </View>
